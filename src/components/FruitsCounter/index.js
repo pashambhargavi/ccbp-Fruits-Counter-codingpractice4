@@ -1,0 +1,137 @@
+// Write your code here
+// Write your code here
+
+import {Component} from 'react'
+
+import './index.css'
+
+class FruitsCounter extends Component {
+  state = {
+    mangoesCount: 0,
+    bananasCount: 0,
+  }
+
+  onClickEatBanana = () => {
+    this.setState(prevState => ({bananasCount: prevState.bananasCount + 1}))
+  }
+
+  onClickEatMango = () => {
+    this.setState(prevState => ({mangoesCount: prevState.mangoesCount + 1}))
+  }
+
+  render() {
+    const {mangoesCount, bananasCount} = this.state
+
+    return (
+      <div className="fruits-counter-container">
+        <div className="fruits-counter">
+          <h1 className="count-text">
+            Bob ate <span className="count">{mangoesCount}</span> mangoes
+            <span className="count"> {bananasCount}</span> bananas
+          </h1>
+          <div className="counters-control-container">
+            <div className="counter-control">
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/mango-img.png"
+                alt="mango"
+                className="fruit-image"
+              />
+              <div className="button-container">
+                <button
+                  type="button"
+                  className="button"
+                  onClick={this.onClickEatMango}
+                >
+                  Eat Mango
+                </button>
+              </div>
+            </div>
+            <div className="counter-control">
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/banana-img.png"
+                alt="banana"
+                className="fruit-image"
+              />
+              <div className="button-container">
+                <button
+                  type="button"
+                  className="button"
+                  onClick={this.onClickEatBanana}
+                >
+                  Eat Banana
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default FruitsCounter
+
+/* / import {Component} from 'react'
+import './index.css'
+
+class FruitsCounter extends Component {
+  state = {eatMango: 0, eatBanana: 0}
+
+  onCountingMangoes = () => {
+    this.setState(prevState => ({eatMango: prevState.eatMango + 1}))
+  }
+
+  onCountingBananas = () => {
+    this.setState(prevState => ({eatBanana: prevState.eatBanana + 1}))
+  }
+
+  render() {
+    const {eatMango, eatBanana} = this.state
+
+    return (
+      <div className="fruit-container">
+        <div className="fruit-counter">
+          <h1 className="heading">
+            Bob ate <span className="counting">{eatMango}</span> Mangoes
+            <span className="counting"> {eatBanana} </span> bananas
+          </h1>
+
+          <div className="image-container ">
+            <div className="images-counter">
+              <img
+                alt="mango"
+                className="image"
+                src="https://assets.ccbp.in/frontend/react-js/mango-img.png"
+              />
+              <button
+                type="button"
+                className="eat-button"
+                onClick={this.onCountingMangoes}
+              >
+                Eat Mango
+              </button>
+            </div>
+
+            <div className="images-counter">
+              <img
+                alt="banana"
+                className="image"
+                src="https://assets.ccbp.in/frontend/react-js/banana-img.png"
+              />
+              <button
+                type="button"
+                className="eat-button"
+                onClick={this.onCountingBananas}
+              >
+                {' '}
+                Eat Banana{' '}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default FruitsCounter/ */
